@@ -48,7 +48,8 @@
 /* Control flags */
 
 /* Global constants */
-
+#define ROWS 9
+#define COLS 9
 
 /* Global variables */
 
