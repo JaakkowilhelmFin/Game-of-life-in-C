@@ -100,11 +100,21 @@ return 0;
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
 ---------------------------------------------------------------------
+ NAME: init_board();
+ DESCRIPTION: gives an array
+    Input:
+    Output: 
+  Used global variables:struct
+ REMARKS when using this function:
+*********************************************************************/
+/*********************************************************************
+    F U N C T I O N    D E S C R I P T I O N
+---------------------------------------------------------------------
  NAME: 
  DESCRIPTION: 
     Input:
     Output: 
-  Used global variables:
+  Used global variables:struct
  REMARKS when using this function:
 *********************************************************************/
 
