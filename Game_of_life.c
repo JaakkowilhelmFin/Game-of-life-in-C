@@ -54,16 +54,41 @@
 /* Global variables */
 
 /* Global structures */
+struct cell
+ {
 
+ int current; /* current situation, which is visible on screen */
+
+ int future; /* temporary calculation area for next round calculation */
+
+ };
 /*-------------------------------------------------------------------*
  *    FUNCTION PROTOTYPES                                             *
  *--------------------------------------------------------------------*/
-
+int init_board(board[ROWS][COLS]);
+void read_board(board[ROWS][COLS]);
+int count_neighbors(board[ROWS][COLS]);
+int update_board(board[ROWS][COLS]);
+void print_board(board[ROWS][COLS]);
 
 /*********************************************************************
  *    MAIN PROGRAM                                                      *
  **********************************************************************/
-
+int main() 
+{
+struct cell board[ROWS][COLS];
+init_board(board);
+read_board(board);
+printf("Initial state:\n");
+print_board(board);
+for (int i = 0; i < 10; i++) 
+{
+update_board(board);
+printf("State after %d round(s):\n", i+1);
+print_board(board);
+}
+return 0;
+}
 
 
 /* end of main */
