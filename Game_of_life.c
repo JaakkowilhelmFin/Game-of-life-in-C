@@ -79,12 +79,11 @@ int main()
 struct cell board[ROWS][COLS];
 init_board(board);
 read_board(board);
-printf("Initial state:\n");
+
 print_board(board);
 for (int i = 0; i < 10; i++) 
 {
 update_board(board);
-printf("State after %d round(s):\n", i+1);
 print_board(board);
 }
 return 0;
@@ -101,12 +100,25 @@ return 0;
     F U N C T I O N    D E S C R I P T I O N
 ---------------------------------------------------------------------
  NAME: init_board();
- DESCRIPTION: gives an array
+ DESCRIPTION: gives an array (board)
     Input:
     Output: 
   Used global variables:struct
  REMARKS when using this function:
 *********************************************************************/
+ int init_board(board[ROWS][COLS])
+{
+  int i; 
+  int j; 
+  for(i =0; i < ROWS; i++)
+    {
+      for(j=0; j < COLS; j++)
+        {
+          .current ;
+          .future ; 
+        }
+    }
+}
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
 ---------------------------------------------------------------------
