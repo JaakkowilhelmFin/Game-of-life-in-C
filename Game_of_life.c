@@ -76,17 +76,17 @@ void print_board(board[ROWS][COLS]);
  **********************************************************************/
 int main() 
 {
-struct cell board[ROWS][COLS];
-init_board(board);
-read_board(board);
-
-print_board(board);
-for (int i = 0; i < 10; i++) 
-{
-update_board(board);
-print_board(board);
-}
-return 0;
+  struct cell board[ROWS][COLS];
+  init_board(board);
+  read_board(board);
+  int i =0; 
+  print_board(board);
+  for (i; i < 10; i++) 
+  {
+    update_board(board);
+    print_board(board);
+  }
+  return 0;
 }
 
 
@@ -111,13 +111,13 @@ return 0;
   int i; 
   int j; 
   for(i =0; i < ROWS; i++)
-    {
-      for(j=0; j < COLS; j++)
+  {
+    for(j=0; j < COLS; j++)
         {
           .current ;
           .future ; 
         }
-    }
+  }
 }
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
