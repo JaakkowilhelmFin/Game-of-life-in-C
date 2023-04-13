@@ -65,11 +65,11 @@ struct cell
 /*-------------------------------------------------------------------*
  *    FUNCTION PROTOTYPES                                             *
  *--------------------------------------------------------------------*/
-int init_board(board[ROWS][COLS]);
-void read_board(board[ROWS][COLS]);
-int count_neighbors(board[ROWS][COLS]);
-int update_board(board[ROWS][COLS]);
-void print_board(board[ROWS][COLS]);
+int init_gameboard(struct cell board[ROWS][COLS]);
+void read_gameboard(struct cell board[ROWS][COLS]);
+int count_neighbors(struct cell board[ROWS][COLS]);
+int update_gameboard(struct cell board[ROWS][COLS]);
+void print_gameboard(struct cell board[ROWS][COLS]);
 
 /*********************************************************************
  *    MAIN PROGRAM                                                      *
@@ -77,14 +77,14 @@ void print_board(board[ROWS][COLS]);
 int main() 
 {
   struct cell board[ROWS][COLS];
-  init_board(board);
-  read_board(board);
+  init_gameboard(board);
+  read_gameboard(board);
   int i =0; 
-  print_board(board);
+  print_gameboard(board);
   for (i; i < 10; i++) 
   {
-    update_board(board);
-    print_board(board);
+    update_gameboard(board);
+    print_gameboard(board);
   }
   return 0;
 }
@@ -99,34 +99,66 @@ int main()
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
 ---------------------------------------------------------------------
- NAME: init_board();
- DESCRIPTION: gives an array (board)
-    Input:
+ NAME: init_gameboard();
+ DESCRIPTION: gives an array of the game (board)
+    Input: all are zeroes. 
     Output: 
   Used global variables:struct
  REMARKS when using this function:
 *********************************************************************/
- int init_board(board[ROWS][COLS])
+ int init_gameboard(struct cell board[ROWS][COLS])
 {
   int i; 
   int j; 
   for(i =0; i < ROWS; i++)
   {
     for(j=0; j < COLS; j++)
-        {
-          .current ;
-          .future ; 
-        }
+    {
+        board[i][j].current = 0 ;
+        board[i][j].future = 0 ; 
+    }
   }
 }
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
 ---------------------------------------------------------------------
- NAME: 
- DESCRIPTION: 
+ NAME: read_gameboard()
+ DESCRIPTION: reads game from file
     Input:
     Output: 
   Used global variables:struct
  REMARKS when using this function:
 *********************************************************************/
+void read_gameboard(struct cell board[ROWS][COLS])
+{
+  FILE *fp = fpoen("gameoflife", "r");
+  
+  fclose(fp);
+}
+/*********************************************************************
+    F U N C T I O N    D E S C R I P T I O N
+---------------------------------------------------------------------
+ NAME: int count_neighbors()
+ DESCRIPTION: counts the neighbors
+    Input:
+    Output: 
+  Used global variables:struct
+ REMARKS when using this function:
+*********************************************************************/
+int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
+{
+  int count= 0;
+  int i;
+  int j; 
 
+  for(i = -1; i <= 1; i++)
+  {
+    for( j= -1; j <= 1; j++)
+    {
+      if ( i != 0 || j !=0)
+      {
+        
+      }
+    }
+  }
+}
