@@ -108,14 +108,15 @@ int main()
 *********************************************************************/
  int init_gameboard(struct cell board[ROWS][COLS])
 {
+  strand(time(NULL));
   int i; 
   int j; 
   for(i =0; i < ROWS; i++)
   {
     for(j=0; j < COLS; j++)
     {
-        board[i][j].current = 0 ;
-        board[i][j].future = 0 ; 
+        board[i][j].current = rand() %2 ;
+        
     }
   }
 }
@@ -157,8 +158,57 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
     {
       if ( i != 0 || j !=0)
       {
-        
+        count = count + 0;
+      }
+      else
+      {
+        count++;
       }
     }
   }
+  return count;
+}
+/*********************************************************************
+    F U N C T I O N    D E S C R I P T I O N
+---------------------------------------------------------------------
+ NAME: int update_gameboard()
+ DESCRIPTION: updates game from future situation to present
+    Input:
+    Output: 
+  Used global variables:struct
+ REMARKS when using this function:
+*********************************************************************/
+int update_gameboard(struct cell board[ROWS][COLS])
+{
+int rows, cols; 
+  int neigborhood = count_neighbors(board, rows, cols);
+  for(rows = 0;rows <= ROWS ; rows++)
+  {
+    for (cols = 0; cols <= COLS; cols++)
+    {
+      switch(board[ROWS][COLS])
+      {
+        case1:
+        break;
+        case2:
+        break;
+        default: 
+          printf("invalid operation. something went wrong");
+      }
+    }
+  }
+}
+/*********************************************************************
+    F U N C T I O N    D E S C R I P T I O N
+---------------------------------------------------------------------
+ NAME: void print_gameboard()
+ DESCRIPTION: prints gameboard to screen
+    Input:
+    Output: 
+  Used global variables:struct
+ REMARKS when using this function:
+*********************************************************************/
+void print_gameboard(struct cell board[ROWS][COLS])
+{
+  
 }
