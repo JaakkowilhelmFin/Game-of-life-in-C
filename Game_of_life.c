@@ -90,8 +90,6 @@ int main()
   }
   return 0;
 }
-
-
 /* end of main */
 
 /*********************************************************************
@@ -137,6 +135,9 @@ void read_gameboard(struct cell board[ROWS][COLS])
   FILE *fp = fpoen("gameoflife", "r");
   char state_c;
   int state, c, r;
+  c = 0, r = 0; 
+
+
   
   fclose(fp);
 }
@@ -185,12 +186,12 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
 int update_gameboard(struct cell board[ROWS][COLS])
 {
 int i, j; 
-  int neigborhood = count_neighbors(board, i, j);
+  int neighborhood = count_neighbors(board, i, j);
   for(i = 0;i <= ROWS ; i++)
   {
     for (j = 0; j <= COLS; j++)
     {
-      switch(board[ROWS][COLS])
+      switch(board[ROWS][COLS].current)
       {
         case ALIVE:
           if(neighborhood < 2 || neighborhood > 3)
@@ -204,7 +205,7 @@ int i, j;
           break;
 
         case DEAD:
-          if( neigborhood == 3)
+          if( neighborhood == 3)
           {
             board[i][j].current = ALIVE;
           }
