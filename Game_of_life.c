@@ -165,16 +165,16 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
   {
     for( j= -1; j <= 1; j++)
     {
-    
       if ( i != 0 || j !=0)
       {
         count = count + 0;
       }
-      else if (board[i][j].current <= board[row][col].current == 1)
+      else if (board[i+row][j+col].current == 1)
       {  
         count++;
       }
     }
+
   }
   return count;
 }
@@ -191,7 +191,7 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
 int update_gameboard(struct cell board[ROWS][COLS])
 {
 int i, j; 
-  int neighborhood = count_neighbors(board, i, j);
+int neighborhood = count_neighbors(board, i, j);
   for(i = 0;i <= ROWS ; i++)
   {
     for (j = 0; j <= COLS; j++)
