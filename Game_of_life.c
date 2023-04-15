@@ -135,6 +135,8 @@ int main()
 void read_gameboard(struct cell board[ROWS][COLS])
 {
   FILE *fp = fpoen("gameoflife", "r");
+  char state_c;
+  int state, c, r;
   
   fclose(fp);
 }
