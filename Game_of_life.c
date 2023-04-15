@@ -52,6 +52,8 @@
 #define COLS 9
 
 /* Global variables */
+#define DEAD 0
+#define ALIVE 1
 
 /* Global structures */
 struct cell
@@ -108,14 +110,14 @@ int main()
 *********************************************************************/
  int init_gameboard(struct cell board[ROWS][COLS])
 {
-  strand(time(NULL));
   int i; 
   int j; 
   for(i =0; i < ROWS; i++)
   {
     for(j=0; j < COLS; j++)
     {
-        board[i][j].current = rand() %2 ;
+        board[i][j].current = 0 ;
+        board[i][j].future = 0; 
         
     }
   }
@@ -180,18 +182,36 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
 *********************************************************************/
 int update_gameboard(struct cell board[ROWS][COLS])
 {
-int rows, cols; 
-  int neigborhood = count_neighbors(board, rows, cols);
-  for(rows = 0;rows <= ROWS ; rows++)
+int i, j; 
+  int neigborhood = count_neighbors(board, i, j);
+  for(i = 0;i <= ROWS ; i++)
   {
-    for (cols = 0; cols <= COLS; cols++)
+    for (j = 0; j <= COLS; j++)
     {
       switch(board[ROWS][COLS])
       {
-        case1:
-        break;
-        case2:
-        break;
+        case ALIVE:
+          if(neighborhood < 2 || neighborhood > 3)
+          {
+            board[][] = DEAD;
+          }
+          else
+          {
+            board[][] = ALIVE;
+          }
+          break;
+
+        case DEAD:
+          if( neigborhood == 3)
+          {
+            board[][] = ALIVE;
+          }
+          else
+          {
+            board[][] = DEAD;
+          }
+          break;
+
         default: 
           printf("invalid operation. something went wrong");
       }
