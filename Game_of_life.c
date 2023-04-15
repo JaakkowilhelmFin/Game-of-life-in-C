@@ -195,22 +195,22 @@ int i, j;
         case ALIVE:
           if(neighborhood < 2 || neighborhood > 3)
           {
-            board[][] = DEAD;
+            board[i][j].current = DEAD;
           }
           else
           {
-            board[][] = ALIVE;
+            board[i][j].current = ALIVE;
           }
           break;
 
         case DEAD:
           if( neigborhood == 3)
           {
-            board[][] = ALIVE;
+            board[i][j].current = ALIVE;
           }
           else
           {
-            board[][] = DEAD;
+            board[i][j].current = DEAD;
           }
           break;
 
