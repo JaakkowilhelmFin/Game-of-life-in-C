@@ -170,8 +170,8 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
       {
         count = count + 0;
       }
-      else
-      {  if(board i j row col current  == 1)
+      else if (board[i][j].current <= board[row][col].current == 1)
+      {  
         count++;
       }
     }
