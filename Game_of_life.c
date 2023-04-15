@@ -69,7 +69,7 @@ struct cell
  *--------------------------------------------------------------------*/
 int init_gameboard(struct cell board[ROWS][COLS]);
 /*void read_gameboard(struct cell board[ROWS][COLS]); */
-int count_neighbors(struct cell board[ROWS][COLS]);
+int count_neighbors(struct cell board[ROWS][COLS], int row, int col);
 int update_gameboard(struct cell board[ROWS][COLS]);
 void print_gameboard(struct cell board[ROWS][COLS]);
 
