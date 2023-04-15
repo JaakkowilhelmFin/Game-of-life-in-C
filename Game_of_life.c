@@ -68,7 +68,7 @@ struct cell
  *    FUNCTION PROTOTYPES                                             *
  *--------------------------------------------------------------------*/
 int init_gameboard(struct cell board[ROWS][COLS]);
-void read_gameboard(struct cell board[ROWS][COLS]);
+/*void read_gameboard(struct cell board[ROWS][COLS]); */
 int count_neighbors(struct cell board[ROWS][COLS]);
 int update_gameboard(struct cell board[ROWS][COLS]);
 void print_gameboard(struct cell board[ROWS][COLS]);
@@ -80,7 +80,7 @@ int main()
 {
   struct cell board[ROWS][COLS];
   init_gameboard(board);
-  read_gameboard(board);
+ /* read_gameboard(board); */
   int i =0; 
   print_gameboard(board);
   for (i; i < 10; i++) 
@@ -119,6 +119,10 @@ int main()
         
     }
   }
+  board[5][7].current = 1 ;
+  board[3][3].current = 0; 
+  board[5][7].current = 1 ;
+  board[1][2].current = 0; 
 }
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
@@ -130,7 +134,7 @@ int main()
   Used global variables:struct
  REMARKS when using this function:
 *********************************************************************/
-void read_gameboard(struct cell board[ROWS][COLS])
+/*void read_gameboard(struct cell board[ROWS][COLS])
 {
   FILE *fp = fpoen("gameoflife", "r");
   char state_c;
@@ -140,7 +144,7 @@ void read_gameboard(struct cell board[ROWS][COLS])
 
   
   fclose(fp);
-}
+}*/
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
 ---------------------------------------------------------------------
@@ -161,12 +165,13 @@ int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
   {
     for( j= -1; j <= 1; j++)
     {
+    
       if ( i != 0 || j !=0)
       {
         count = count + 0;
       }
       else
-      {
+      {  if(board i j row col current  == 1)
         count++;
       }
     }
