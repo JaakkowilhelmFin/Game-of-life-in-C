@@ -202,11 +202,11 @@ int update_gameboard(struct cell board[ROWS][COLS])
 {
 int i, j; 
 int neighborhood = count_neighbors(board, i, j);
-  for(i = 0;i <= ROWS ; i++)
+  for(i = 0;i < ROWS ; i++)
   {
-    for (j = 0; j <= COLS; j++)
+    for (j = 0; j < COLS; j++)
     {
-      switch(board[ROWS][COLS].current)
+      switch(board[i][j].current)
       {
         case ALIVE:
           if(neighborhood < 2 || neighborhood > 3)
@@ -236,9 +236,9 @@ int neighborhood = count_neighbors(board, i, j);
     }
   }  
 
-  for(i = 0;i <= ROWS ; i++)
+  for(i = 0;i < ROWS ; i++)
   {
-    for (j = 0; j <= COLS; j++)
+    for (j = 0; j < COLS; j++)
     {
       board[i][j].current = board[i][j].future; 
     }
