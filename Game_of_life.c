@@ -114,15 +114,15 @@ int main()
   {
     for(j=0; j < COLS; j++)
     {
-        board[i][j].current = 0 ;
-        board[i][j].future = 0; 
+        board[i][j].current = DEAD ;
+        board[i][j].future = DEAD; 
         
     }
   }
-  board[5][7].current = 1 ;
-  board[3][3].current = 0; 
-  board[5][7].current = 1 ;
-  board[1][2].current = 0; 
+  board[5][7].current = ALIVE ;
+  board[3][3].current = ALIVE; 
+  board[5][7].current = ALIVE ;
+  board[1][2].current = ALIVE; 
 }
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
@@ -201,22 +201,22 @@ int neighborhood = count_neighbors(board, i, j);
         case ALIVE:
           if(neighborhood < 2 || neighborhood > 3)
           {
-            board[i][j].current = DEAD;
+            board[i][j].future = DEAD;
           }
           else
           {
-            board[i][j].current = ALIVE;
+            board[i][j].future = ALIVE;
           }
           break;
 
         case DEAD:
           if( neighborhood == 3)
           {
-            board[i][j].current = ALIVE;
+            board[i][j].future = ALIVE;
           }
           else
           {
-            board[i][j].current = DEAD;
+            board[i][j].future = DEAD;
           }
           break;
 
@@ -224,6 +224,15 @@ int neighborhood = count_neighbors(board, i, j);
           printf("invalid operation. something went wrong");
       }
     }
+  }  
+
+  for(i = 0;i <= ROWS ; i++)
+  {
+    for (j = 0; j <= COLS; j++)
+    {
+      board[i][j].current = board[i][j].future; 
+    }
+      
   }
 }
 /*********************************************************************
