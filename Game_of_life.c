@@ -119,10 +119,20 @@ int main()
         
     }
   }
-  board[5][7].current = ALIVE ;
+  board[3][7].current = ALIVE;
   board[3][3].current = ALIVE; 
-  board[5][7].current = ALIVE ;
+  board[5][7].current = ALIVE;
   board[1][2].current = ALIVE; 
+  board[5][5].current = ALIVE;
+  board[1][4].current = ALIVE;
+  board[6][7].current = ALIVE;
+  board[5][8].current = ALIVE;
+  board[3][4].current = ALIVE; 
+  board[3][5].current = ALIVE;
+  board[2][5].current = ALIVE; 
+  board[5][4].current = ALIVE;
+  board[1][3].current = ALIVE;
+  board[1][2].current = ALIVE;
 }
 /*********************************************************************
     F U N C T I O N    D E S C R I P T I O N
