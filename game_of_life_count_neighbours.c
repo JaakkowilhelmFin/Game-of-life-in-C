@@ -1,4 +1,14 @@
-*********************************************************************/
+/*********************************************************************
+    F U N C T I O N    D E S C R I P T I O N
+---------------------------------------------------------------------
+ NAME: int count_neighbors()
+ DESCRIPTION: counts the neighbors
+    Input:
+    Output: 
+  Used global variables:struct
+ REMARKS when using this function:
+/*********************************************************************/
+#include "header.h"
 int count_neighbors(struct cell board[ROWS][COLS], int row, int col)
 {
   int count= 0;

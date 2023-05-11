@@ -1,3 +1,4 @@
+#include "header.h"
 int init_gameboard(struct cell board[ROWS][COLS])
 {
   int i; 

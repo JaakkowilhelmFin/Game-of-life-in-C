@@ -8,6 +8,7 @@
   Used global variables:struct
  REMARKS when using this function:
 *********************************************************************/
+#include "header.h"
 void print_gameboard(struct cell board[ROWS][COLS])
 {
   int i, j;
